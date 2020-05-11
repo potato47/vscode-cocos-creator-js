@@ -1,0 +1,43 @@
+{
+	"name": "cocos-creator-js",
+	"displayName": "Cocos Creator JS",
+	"description": "Cocos Creator 支持 JavaScript 函数跳转，扩展代码提示。",
+	"publisher": "nextfu",
+	"version": "0.1.5",
+	"icon": "favicon.ico",
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:javascript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/potato47/vscode-cocos-creator-js"
+	},
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile && yarn run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.44.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	}
+}
