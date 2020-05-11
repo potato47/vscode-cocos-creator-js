@@ -6,7 +6,7 @@ export let fileMap: { [name: string]: string };
 export const excludeSet = new Set(['extends', 'properties', 'statics', 'editor', 'onLoad', 'start', 'update', 'onEnable', 'onDisable', 'onDestroy', 'if', 'else if', 'for', 'function', 'new', 'return', 'switch', 'throw', 'while']);
 
 export function updateFileMap() {
-    fileMap = {};
+	fileMap = {};
 	const document = vscode.window.activeTextEditor?.document;
 	if (!document) {
 		return;
@@ -42,7 +42,7 @@ export function getFilePath(key: string) {
 }
 
 export function getFileContent(filePath: string) {
-    return fs.readFileSync(filePath).toString();
+	return fs.readFileSync(filePath).toString();
 }
 
 export async function getSymbols(document: vscode.TextDocument): Promise<vscode.DocumentSymbol[]> {
@@ -62,14 +62,14 @@ export function convertCCSymbols(symbols: vscode.DocumentSymbol[], document: vsc
 	symbols.forEach(symbol => {
 		if (symbol.name === 'properties') {
 			symbol.children.forEach(symbolChild => {
-                if (/\w+/.test(symbolChild.name)) {
-                    ccSymbols.push(symbolChild);
-                }
+				if (/\w+/.test(symbolChild.name)) {
+					ccSymbols.push(symbolChild);
+				}
 			});
 		} else if (symbol.kind !== vscode.SymbolKind.Variable) {
-            if (/\w+/.test(symbol.name)) {
-                ccSymbols.push(symbol);
-            }
+			if (/\w+/.test(symbol.name)) {
+				ccSymbols.push(symbol);
+			}
 		}
 	});
 	return ccSymbols;

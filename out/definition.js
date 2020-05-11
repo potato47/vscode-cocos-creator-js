@@ -23,7 +23,7 @@ function registerDefinition(context) {
                 module = result[0];
             }
             else {
-                if (!new RegExp(`\\(?<="|')${word}(?="|')`).test(line.text)) {
+                if (!new RegExp(`(?<="|')${word}(?="|')`).test(line.text)) {
                     return;
                 }
                 module = word;

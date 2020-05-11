@@ -3,7 +3,7 @@
 	"displayName": "Cocos Creator JS",
 	"description": "Cocos Creator 支持 JavaScript 函数跳转，扩展代码提示。",
 	"publisher": "nextfu",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"icon": "favicon.ico",
 	"engines": {
 		"vscode": "^1.44.0"
